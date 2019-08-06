@@ -11,7 +11,7 @@
         $this->validateFirstName($fn);
         $this->validateLastName($ln);
         $this->validateEmails($em,$em2);
-        $this->validateUserName($pw,$pw2);
+        $this->validatePasswords($pw,$pw2);
 
         if(empty($this-> errorArray)){
          //Insert into db
