@@ -18,15 +18,21 @@
          return true;
         }
         else{
-            return false;
+            return false;   
         }
     }
 
+    public function getError($error){
+        if(!in_array($error,$this->errorArray)){
+                $error= "";
+        }
+        return "<span class='errorMessage'>$error </span>";
+    }
 
 
     private function validateUsername ($un){
 
-       if(strlen($un)>25 || strlen ($un)<5){
+       if(strlen($un)>25 || strlen($un)<5){
            array_push($this->errorArray,"Your username must be between 5 and 25 characters");
            return;
        }
@@ -34,13 +40,13 @@
        //TODO: check if username exists
     }
     private function validateFirstName($fn){
-        if(strlen($un)>25 || strlen ($un)<2){
+        if(strlen($fn)>25 || strlen ($fn)<2){
             array_push($this->errorArray,"Your first name must be between 5 and 25 characters");
             return;
         }
     }
     private function validateLastName($ln){
-        if(strlen($un)>25 || strlen ($un)<2){
+        if(strlen($ln)>25 || strlen ($ln)<2){
             array_push($this->errorArray,"Your last name must be between 5 and 25 characters");
             return;
         }
