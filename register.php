@@ -15,7 +15,7 @@ function getInputValue($name){
 
 	}
 }
-
+echo $userLoggedIn;
 
 ?>
 
