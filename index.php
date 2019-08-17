@@ -4,7 +4,7 @@ include("includes/config.php");
 //session_destroy();
  if(isset($_SESSION['userLoggedIn'])){
 	 $userLoggedIn= $_SESSION['userLoggedIn'];
-	 echo $userLoggedIn;
+	 //echo $userLoggedIn;
  }
  else{
 	 header("Location:register.php");
@@ -14,10 +14,17 @@ include("includes/config.php");
 <html>
 <head>
 	<title>Welcome to Slotify!</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
-	Hello!
+
+<div id="nowPlayingBarContainer">
+
+</div>
+
+
 </body>
 
 </html>
