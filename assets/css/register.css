@@ -81,3 +81,7 @@ height:100%;
 .hasAccountText{
     text-align:center;
 }
+#registerForm,
+#loginForm{
+    display:none;
+}
