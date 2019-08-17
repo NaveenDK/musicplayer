@@ -21,10 +21,13 @@ function getInputValue($name){
 <html>
 <head>
 	<title>Welcome to Slotify!</title>
+	
 	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
 
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
 	<script src="assets/js/register.js"> </script>
 </head>
 <body>
@@ -125,10 +128,21 @@ function getInputValue($name){
 							
 								<button type="submit" name="registerButton">SIGN UP</button>
 								<div class="hasAccountText">
-									<span id="hideRegister">Don't have an account yet? Signup here</span>
+									<span id="hideRegister">Don't have an account yet? Login here</span>
 								</div>	
 							</form>
 			</div>	
+
+			<div id="loginText">
+				 <h1>Get great music, right now</h1>
+				 <h2>Listen to Christian Songs </h2>
+				 <ul>
+				 <li> <i class="fa fa-check" style="font-family:FontAwesome; color:#07d159;" ></i> Discover music you'll fall in love with</li>
+				 <li><i class="fa fa-check" style="font-family:FontAwesome;color:#07d159;" ></i> Create your own playlist</li>
+				 <li> <i class="fa fa-check" style="font-family:FontAwesome;color:#07d159;" ></i> Follow artists to keep up to date</li>
+				</ul>
+
+			</div>
 	</div>
 </div>
 
