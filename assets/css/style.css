@@ -152,7 +152,39 @@ html,body {
     flex-direction: column;
     -ms-flex-direction:column;
 }
-.logo-size {
+.logo{
+    margin-bottom:15px;
+}
+.logo img{
     width:52px;
     height:42px;
+}
+.navBar .group {
+    border-top:1px solid #a0a0a0;
+    padding:10px 0;
+    
+}
+.navItem {
+    padding:10px 0;
+    font-size:14px;
+    font-weight: 700;
+    display:block;
+    letter-spacing:1px;
+    position:relative;
+}
+
+.navItemLink{
+    color:#a0a0a0;
+    text-decoration:none;
+}
+.navItemLink:hover {
+    color:#ffffff;
+  
+}
+.navItemLink .icon{
+    position:absolute;
+    right:0;
+    top: 6px;
+    width:25px;
+
 }
