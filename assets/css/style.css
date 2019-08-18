@@ -146,3 +146,13 @@ html,body {
     top:0;
     left:0;
 }
+.navBar{
+    padding: 25px;
+    display:flex;
+    flex-direction: column;
+    -ms-flex-direction:column;
+}
+.logo-size {
+    width:52px;
+    height:42px;
+}

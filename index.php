@@ -23,7 +23,13 @@ include("includes/config.php");
 <div id="mainContainer">
 	<div id="topContainer">
  		<div id="navBarContainer">
- 			
+ 			<nav class="navBar">
+
+ 				<a href="index.php" class="logo">
+					 <img class="logo-size"src="assets/images/icons/logo-test.png">
+				 </a>
+
+			 </nav>
 		</div>
 	</div>
 
