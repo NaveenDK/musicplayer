@@ -22,3 +22,4 @@ echo $artist ->getName();
 ?>
 
 <?php include("includes/footer.php"); ?>
+    
