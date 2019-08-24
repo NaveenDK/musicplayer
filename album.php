@@ -14,12 +14,10 @@ $album = mysqli_fetch_array($albumQuery);
 
 $artistId = $album['artist'];
 //echo $artistId;
-
-$artistQuery = mysqli_query($con,"SELECT * FROM artists WHERE id='$artistId'");
-$artist = mysqli_fetch_array($artistQuery);
+$artist = new Artist($con,$artistId);
 
 echo $album['title']."<br>";
-echo $artist['name'];
+echo $artist ->getName();
 
 ?>
 
