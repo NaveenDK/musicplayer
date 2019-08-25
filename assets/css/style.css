@@ -237,7 +237,7 @@ body{
 .entityInfo .leftSection {
 width:30%;
 float:left;
-max-width:150px;
+max-width:250px;
 }
 
 .entityInfo .leftSection img {
@@ -254,7 +254,7 @@ max-width:150px;
 .entityInfo .rightSection h2 {
     margin-top:0px;
 }
-.entityInfo .rightSection span {
+.entityInfo .rightSection .playbackBar {
     color:#939393;
     font-weight: 200;
 }
