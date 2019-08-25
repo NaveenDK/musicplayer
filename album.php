@@ -47,7 +47,7 @@ $artist = $album->getArtist();
           //  echo $songId."<br>";
           $albumSong = new Song($con,$songId);
           $albumArtist = $albumSong ->getArtist();
-          echo $albumSong->getTitle();
+         // echo $albumSong->getTitle();
           echo "<li class='tracklistRow'>
                 <div class='trackCount'>
                     <img class='play' src = 'assets/images/icons/play-white.png'>
@@ -57,7 +57,14 @@ $artist = $album->getArtist();
                 <div class='trackInfo'>
                   <span class='trackName'>". $albumSong->getTitle()."</span>
                   <span class='artistName'>".$albumArtist ->getName()."</span>
+                </div>
 
+                <div class='trackOptions'>
+                    <img class='optionsButton' src='assets/images/icons/more.png'>
+                </div>
+
+                <div class='trackDuration'>
+                    <span class='duration'>" . $albumSong-> getDuration() . "</span>
                 </div>
           </li>";
 
