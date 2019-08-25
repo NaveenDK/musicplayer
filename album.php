@@ -9,17 +9,22 @@ else{
     header("Location:index.php"); //Redirect to index page
 }
 
-$albumQuery = mysqli_query($con,"SELECT * FROM albums WHERE id='$albumId'");
-$album = mysqli_fetch_array($albumQuery);
+// $albumQuery = mysqli_query($con,"SELECT * FROM albums WHERE id='$albumId'");
+// $album = mysqli_fetch_array($albumQuery);
 
-$artistId = $album['artist'];
+//instead of the above we will use the below
+
+
+$album =  new Album($con,$albumId);
+
+//$artistId = $album['artist'];
 //echo $artistId;
-$artist = new Artist($con,$artistId);
+//$artist = new Artist($con,$artistId);
+$artist = $album->getArtist();
 
-echo $album['title']."<br>";
+echo $album ->getTitle()."<br>";
 echo $artist ->getName();
 
 ?>
 
 <?php include("includes/footer.php"); ?>
-    

@@ -1,6 +1,7 @@
 <?php  
 include("includes/config.php");
 include("includes/classes/Artist.php");
+include("includes/classes/Album.php"); //havin album after-artist is important you know why
 
 //session_destroy();
  if(isset($_SESSION['userLoggedIn'])){
