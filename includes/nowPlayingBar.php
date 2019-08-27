@@ -19,8 +19,21 @@ $(document).ready(function(){
 function setTrack(trackId,newPlaylist,play){
   //audioElement.setTrack("assets/music/bensound-clearday.mp3");
   $.post("includes/handlers/ajax/getSongJson.php",{ songId: trackId },function(data){
+	var track = JSON.parse(data);
+	$(".trackName span").text(track.title);
+	//dconsole.log(track);
+	$.post("includes/handlers/ajax/getArtistJson.php",{ artistId: track.artist },function(data){
+	  var artist = JSON.parse(data);
+	  console.log(artist.name);
 
+	
+	  $(".artistName span").text(artist.name);
+	});
+
+	audioElement.setTrack(track.path);
+	//console.log(data);
   });
+
   if(play){ audioElement.play();}
  
 }
@@ -49,11 +62,11 @@ $(".controlButton.play").show();
 
 						<div class="trackInfo">
 							<span class="trackName">
-								<span>Happy Birthday</span>
+								<span></span>
 							</span>
 
 							<span class="artistName">
-								<span>B C P Guy</span>
+								<span></span>
 							</span>
 
 						</div>
