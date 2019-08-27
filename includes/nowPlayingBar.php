@@ -17,7 +17,10 @@ $(document).ready(function(){
 });
 
 function setTrack(trackId,newPlaylist,play){
-  audioElement.setTrack("assets/music/bensound-clearday.mp3");
+  //audioElement.setTrack("assets/music/bensound-clearday.mp3");
+  $.post("includes/handlers/ajax/getSongJson.php",{ songId: trackId },function(data){
+
+  });
   if(play){ audioElement.play();}
  
 }
