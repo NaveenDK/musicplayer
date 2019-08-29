@@ -4,8 +4,9 @@ var audioElement;
 function Audio() {
   this.currentlyPlaying;
   this.audio = document.createElement("audio");
-  this.setTrack = function(src) {
-    this.audio.src = src;
+  this.setTrack = function(track) {
+    this.currentlyPlaying = track;
+    this.audio.src = track.path;
   };
 
   this.play = function() {
