@@ -9,7 +9,7 @@ function Audio() {
    //this refers to the object that the event was called on
    $(".progressTime.remaining").text(this.duration);
  });
- //this.audio.duration here is same as this.duration above
+ //this.audio.d uration here is same as this.duration above
 
   this.setTrack = function(track) {
     this.currentlyPlaying = track;
