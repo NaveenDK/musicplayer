@@ -12,9 +12,39 @@ $jsonArray = json_encode($resultArray);
 
 $(document).ready(function(){
 	currentPlaylist = <?php echo $jsonArray;?>;
+	console.log("currentPlaylist " + currentPlaylist);
 	audioElement = new Audio();
     setTrack(currentPlaylist[0],currentPlaylist,false);
+    
+	$(".playbackBar .progressBar").mousedown(function(){
+		mouseDown = true;
+	})
+	$(".playbackBar .progressBar").mousemove(function(e){
+		//mousedown = true;
+		if(mouseDown){
+			//Set time of song depending on position of mouse
+			timeFromOffset(e,this);
+		}
+	});
+
+	$(".playbackBar .progressBar").mouseup(function(e){
+		//mousedown = true;
+		timeFromOffset(e,this);
+	});
+    $(document).mouseup(function(){
+		mouseDown = false;
+	})
 });
+
+
+function timeFromOffset(mouse, progressBar){
+	 
+	var percentage  = mouse.offsetX / $(progressBar).width()*100;
+	var seconds = audioElement.audio.duration * (percentage/100);
+	audioElement.setTime(seconds);
+
+}
+
 
 function setTrack(trackId,newPlaylist,play){
   
