@@ -12,12 +12,15 @@ $jsonArray = json_encode($resultArray);
 
 $(document).ready(function(){
 	currentPlaylist = <?php echo $jsonArray;?>;
-	console.log("currentPlaylist " + currentPlaylist);
+	
+	//console.log(currentPlaylist);
 	audioElement = new Audio();
 	setTrack(currentPlaylist[0],currentPlaylist,false);
 	updateVolumeProgressBar(audioElement.audio);
 
-    
+    $("#nowPlayingBarContainer").on("mousedown touchstart mousemove touchmove",function(e){
+		e.preventDefault();
+	});
 	$(".playbackBar .progressBar").mousedown(function(){
 		mouseDown = true;
 	})
@@ -74,10 +77,27 @@ function timeFromOffset(mouse, progressBar){
 
 }
 
+function nextSong(){
+	if(currentIndex == currentPlaylist.length -1){
+		currentIndex = 0;
+	}
+	else{
+		currentIndex++;
+	}
+
+	var trackToPlay = currentPlaylist[currentIndex];
+
+	setTrack(trackToPlay,currentPlaylist,true);
+}
+
+
 
 function setTrack(trackId,newPlaylist,play){
   
   $.post("includes/handlers/ajax/getSongJson.php",{ songId: trackId },function(data){
+
+		currentIndex = currentPlaylist.indexOf(trackId);
+
 		var track = JSON.parse(data);
 		$(".trackName span").text(track.title);
 	
@@ -160,7 +180,7 @@ $(".controlButton.play").show();
 							<button class="controlButton pause" title="Pause button" style="display:none;" onclick="pauseSong()">		   
 									<img src="assets/images/icons/pause.png" alt="Pause"/>
 							</button>
-							<button class="controlButton next" title="Next button">		   
+							<button class="controlButton next" title="Next button" onclick="nextSong()">		   
 									<img src="assets/images/icons/next.png" alt="Next"/>
 							</button>
 
