@@ -9,9 +9,13 @@ var shuffle = false;
 var userLoggedIn;
 
 function openPage(url){
-  var encodedURl = encodeURI(url + "&userLoggedIn" + userLoggedIn);
-  $("#mainContent").load(encodedUrl);
-  
+  if(url.indexOf("?")== -1){
+    url = url + "?";
+    
+  }
+  var encodedURl = encodeURI(url + "&userLoggedIn=" + userLoggedIn);
+  $("#mainContent").load(encodedURl);
+
 }
 
 function formatTime(seconds){
