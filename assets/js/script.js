@@ -8,6 +8,11 @@ var repeat = false;
 var shuffle = false;
 var userLoggedIn;
 
+function openPage(url){
+  var encodedURl = encodeURI(url + "&userLoggedIn" + userLoggedIn);
+  $("#mainContent").load(encodedUrl);
+  
+}
 
 function formatTime(seconds){
   var time = Math.round(seconds);
