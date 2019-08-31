@@ -11,10 +11,12 @@ var userLoggedIn;
 function openPage(url){
   if(url.indexOf("?")== -1){
     url = url + "?";
-    
+
   }
   var encodedURl = encodeURI(url + "&userLoggedIn=" + userLoggedIn);
   $("#mainContent").load(encodedURl);
+  $("body").scrollTop(0);
+  history.pushState(null,null,url);
 
 }
 
