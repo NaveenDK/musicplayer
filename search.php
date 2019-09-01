@@ -18,7 +18,7 @@ else{
 
 <script>
  $(function(){
-     var timer;
+    
      $(".searchInput").keyup(function(){
          clearTimeout(timer);
 
