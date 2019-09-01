@@ -94,3 +94,32 @@ else{
     </ul>
 
 </div>
+
+
+<div class="artistsContainer borderBottom">
+
+        <h2>
+            Artists
+        </h2>
+        <?php
+        $artistQuery = mysqli_query($con,"SELECT id FROM artists WHERE name LIKE '$term%' LIMIT 10");
+        
+            if(mysqli_num_rows($artistQuery)==0){
+                echo "<span class='noResults'>No artists found matching ". $term."</span>";
+            }
+            while($row = mysqli_fetch_array($artistQuery)){
+                $artistFound  = new Artist($con,$row['id']);
+
+                echo "<div class='searchResultRow'>
+                        <div class='artistName'>
+                            <span role='link' tabindex='0' onclick='openPage(\"artist.php?id=".$artistFound ->getId() ."\")'>
+                              ".$artistFound->getName() ."
+                            </span>
+
+                        </div>
+                    </div>";
+
+            }
+        ?>
+
+</div>
