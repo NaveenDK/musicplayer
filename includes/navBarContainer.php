@@ -22,7 +22,7 @@
 					<span   role="link" tabindex="0" onclick="openPage('yourMusic.php')" class="navItemLink">Your Music </span>
 				</div>
 				<div class="navItem">
-					<span   role="link" tabindex="0" onclick="openPage('profile.php')"lass="navItemLink">B C G Guy</span>
+					<span   role="link" tabindex="0" onclick="openPage('settings.php')"lass="navItemLink"><?php echo $userLoggedIn->getUsername(); ?></span>
 				</div>
 			
 			</div>
