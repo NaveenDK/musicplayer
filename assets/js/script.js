@@ -9,6 +9,17 @@ var shuffle = false;
 var userLoggedIn;
 var timer;
 
+$(document).click(function(click){
+    var target  = $(click.target);
+    if(!target.hasClass("item") && !target.hasClass("optionsButton")){
+      hideOptionsMenu();
+    }
+});
+
+$(window).scroll(function(){
+  hideOptionsMenu();
+});
+
 function openPage(url){
   
   if(timer != null){
@@ -59,6 +70,14 @@ function deletePlaylist(playlistId){
      
   }
 }
+
+function hideOptionsMenu(){
+  var menu = $(".optionsMenu");
+  if(menu.css("display") != "none"){
+    menu.css("display","none");
+  }
+}
+
 
 function showOptionsMenu(button){
 
