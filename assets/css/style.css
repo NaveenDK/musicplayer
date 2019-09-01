@@ -381,3 +381,15 @@ max-width:250px;
 input:focus{
     outline:none;
 }
+.searchResultRow {
+  
+    padding:15px 10px;
+}
+.searchResultRow :hover{
+    background-color:#282828;
+}
+
+.searchResultRow .artistName span{
+    color:#ffffff;
+
+}
