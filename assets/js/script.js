@@ -53,6 +53,12 @@ function removeFromPlaylist(button,playlistId){
 
 }
 
+function logout(){
+  $.post("includes/handlers/ajax/logout.php",function(){
+     location.reload();
+  });
+}
+
 function openPage(url){
   
   if(timer != null){
